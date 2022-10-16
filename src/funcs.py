@@ -6,6 +6,7 @@ if __name__ == "__main__":
     print('dont run this file !!')
     exit()
 
+
 def _prepare(t, origin: tuple):
     """
     create origin coordinates and create length and width values
@@ -14,11 +15,10 @@ def _prepare(t, origin: tuple):
     """
     t.up()
     ogX, ogY = origin
-    x = 20
     y = 50
     t.goto(ogX, ogY)
     t.color('white')
-    return (ogX, ogY, x, y)
+    return (ogX, ogY, y)
 
 
 def draw_zero(t, origin: tuple = (0, 0)):
@@ -27,7 +27,7 @@ def draw_zero(t, origin: tuple = (0, 0)):
     takes in a turtle object
     """
 
-    ogX, ogY, x, y = _prepare(t, origin)
+    ogX, ogY, y = _prepare(t, origin)
     t.pendown()
     t.goto(ogX, y)
     t.goto(ogX-30, y)
@@ -36,7 +36,7 @@ def draw_zero(t, origin: tuple = (0, 0)):
 
 
 def draw_one(t, origin: tuple = (0, 0)):
-    ogX, _, _, y = _prepare(t, origin)
+    ogX, _, y = _prepare(t, origin)
     bottomLineLength = 40
     t.pendown()
     t.goto(ogX, y)
